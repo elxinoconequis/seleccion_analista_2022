@@ -10,6 +10,9 @@ Trabajando en "branch-1"
 
 Estoy trabajando en pollos_petrel/dummy_model.py
 
+Las unidades de longitud son *mm* y las de masa con *g*
+
+
 ## Análisis del problema
 ___
 Queda pendiente reoslver cuales son la sunideades de longitud y masa.
