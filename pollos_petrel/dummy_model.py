@@ -4,14 +4,10 @@ import matplotlib
 
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
-    #id,Masa,Longitud_tarso,Longitud_ala,Longitud_pico,Longitud_pluma_interior_de_la_cola,Longitud_pluma_exterior_de_la_cola,target
-    #[],[],[],[],[]
-    # path to /pollos_petrel
-    #C:\Users\Fernando\Desktop\GECI-Seleccion_analista\seleccion_analista_2022_JFOS\pollos_petrel
-    submission_file_name = "JFOS_submission.csv"
-    training_dataset_path = "C:/Users/Fernando/Desktop/GECI-Seleccion_analista/seleccion_analista_2022_JFOS/pollos_petrel/train.csv"
+    training_dataset_path = "pollos_petrel/train.csv"
     training_dataset = pd.read_csv(training_dataset_path)
-    print(type(training_dataset))
+    print("Length: ",len(training_dataset),type(training_dataset))
+    print(training_dataset.head())
 
     return training_dataset
 
@@ -24,9 +20,10 @@ def get_target_mean(dataset: pd.DataFrame) -> float:
 
 # Lee test.csv
 def read_testing_dataset() -> pd.DataFrame:
-    testing_dataset_path = "C:/Users/Fernando/Desktop/GECI-Seleccion_analista/seleccion_analista_2022_JFOS/pollos_petrel/test.csv"
+    testing_dataset_path = "pollos_petrel/test.csv"
     testing_dataset = pd.read_csv(testing_dataset_path)
-    print(type(testing_dataset))
+    print("Length: ",len(testing_dataset),type(testing_dataset))
+    print(testing_dataset.head())
     return testing_dataset
 
 
@@ -56,12 +53,25 @@ def write_submission():
 ## ------MAIN-----------------------
 cwd=os.getcwd()
 print("\nCurrent Working Directory",cwd)
-print("List files and directories: ", os.listdir())
+print("List files and directories: \n", os.listdir())
 print("Pandas version: ", pd.__version__)
 
 
-print("Leer /train.csv")
-x=read_training_dataset()
-print("Leer test.csv")
-y=read_testing_dataset()
+print("\nLeer /train.csv")
+df_train=read_training_dataset()
+
+print("\nLeer /test.csv")
+df_test=read_testing_dataset()
+
+
+# 1.- Ajusta un modelo con el archivo train.csv
+
+
+# 2.- Evalúa el modelo ajustado en test.csv
+
+# 3.- Guarda la respuesta en un archivo .csv
+submission_file_name = "JFOS_submission.csv"
+
+# Resultado: Estimar la edad de acuerdo a la morfometría
+# id,edad estimada
 
