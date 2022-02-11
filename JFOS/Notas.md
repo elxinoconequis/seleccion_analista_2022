@@ -6,6 +6,8 @@ SO: Windows 10
 Entorno virtual: Anaconda 3 ('base':conda)
 Versión de python: 3.9.7 64-bit
 
+Trabajando en "branch-1"
+
 Estoy trabajando en pollos_petrel/dummy_model.py
 
 ## Análisis del problema
