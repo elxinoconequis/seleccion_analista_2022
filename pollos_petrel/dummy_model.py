@@ -4,6 +4,7 @@ import matplotlib
 
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
+    submission_file_name = "JFOS_submission.csv"
     training_dataset_path = "pollos_petrel/train.csv"
     training_dataset = pd.read_csv(training_dataset_path)
     print("Length: ",len(training_dataset),type(training_dataset))
