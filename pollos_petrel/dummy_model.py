@@ -45,8 +45,8 @@ def add_mean_as_target() -> pd.DataFrame:
 
 
 # Guarda el archivo con sufijo _submission.csv
-def write_submission():
-    submission_path = "pollos_petrel/example_python_submission.csv"
+def write_submission(dataset: pd.DataFrame,filename=""):
+    submission_path = "pollos_petrel/"+filename
     submission = add_mean_as_target()
     submission.to_csv(submission_path)
 
@@ -58,17 +58,23 @@ print("List files and directories: \n", os.listdir())
 print("Pandas version: ", pd.__version__)
 
 
+# 1.- Ajusta un modelo con el archivo train.csv
 print("\nLeer /train.csv")
 df_train=read_training_dataset()
 
-print("\nLeer /test.csv")
-df_test=read_testing_dataset()
+df.train=df_train.fillna(0)
+print(df_train[["Masa","target"]])
 
+sort_by_mass = df_train.sort_values(by=["Masa"])
+print(sort_by_mass)
 
-# 1.- Ajusta un modelo con el archivo train.csv
-
+sort_by_day=df_train.sort_values(by=["target"])
+print(sort_by_day)
 
 # 2.- Evalúa el modelo ajustado en test.csv
+#print("\nLeer /test.csv")
+#df_test=read_testing_dataset()
+
 
 # 3.- Guarda la respuesta en un archivo .csv
 submission_file_name = "JFOS_submission.csv"
