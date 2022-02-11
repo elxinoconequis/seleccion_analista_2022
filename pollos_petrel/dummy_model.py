@@ -1,10 +1,18 @@
 import pandas as pd
-
+import os
+import matplotlib
 
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
-    training_dataset_path = "pollos_petrel/train.csv"
+    #id,Masa,Longitud_tarso,Longitud_ala,Longitud_pico,Longitud_pluma_interior_de_la_cola,Longitud_pluma_exterior_de_la_cola,target
+    #[],[],[],[],[]
+    # path to /pollos_petrel
+    #C:\Users\Fernando\Desktop\GECI-Seleccion_analista\seleccion_analista_2022_JFOS\pollos_petrel
+    submission_file_name = "JFOS_submission.csv"
+    training_dataset_path = "C:/Users/Fernando/Desktop/GECI-Seleccion_analista/seleccion_analista_2022_JFOS/pollos_petrel/train.csv"
     training_dataset = pd.read_csv(training_dataset_path)
+    print(type(training_dataset))
+
     return training_dataset
 
 
@@ -16,8 +24,9 @@ def get_target_mean(dataset: pd.DataFrame) -> float:
 
 # Lee test.csv
 def read_testing_dataset() -> pd.DataFrame:
-    testing_dataset_path = "pollos_petrel/test.csv"
+    testing_dataset_path = "C:/Users/Fernando/Desktop/GECI-Seleccion_analista/seleccion_analista_2022_JFOS/pollos_petrel/test.csv"
     testing_dataset = pd.read_csv(testing_dataset_path)
+    print(type(testing_dataset))
     return testing_dataset
 
 
@@ -42,3 +51,17 @@ def write_submission():
     submission_path = "pollos_petrel/example_python_submission.csv"
     submission = add_mean_as_target()
     submission.to_csv(submission_path)
+
+
+## ------MAIN-----------------------
+cwd=os.getcwd()
+print("\nCurrent Working Directory",cwd)
+print("List files and directories: ", os.listdir())
+print("Pandas version: ", pd.__version__)
+
+
+print("Leer /train.csv")
+x=read_training_dataset()
+print("Leer test.csv")
+y=read_testing_dataset()
+
