@@ -4,10 +4,6 @@ import matplotlib
 
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
-    #id,Masa,Longitud_tarso,Longitud_ala,Longitud_pico,Longitud_pluma_interior_de_la_cola,Longitud_pluma_exterior_de_la_cola,target
-    #[],[],[],[],[]
-    # path to /pollos_petrel
-    #C:\Users\Fernando\Desktop\GECI-Seleccion_analista\seleccion_analista_2022_JFOS\pollos_petrel
     submission_file_name = "JFOS_submission.csv"
     training_dataset_path = "C:/Users/Fernando/Desktop/GECI-Seleccion_analista/seleccion_analista_2022_JFOS/pollos_petrel/train.csv"
     training_dataset = pd.read_csv(training_dataset_path)
