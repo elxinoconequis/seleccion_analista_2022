@@ -20,7 +20,7 @@ def get_target_mean(dataset: pd.DataFrame) -> float:
 
 # Lee test.csv
 def read_testing_dataset() -> pd.DataFrame:
-    testing_dataset_path = "C:/Users/Fernando/Desktop/GECI-Seleccion_analista/seleccion_analista_2022_JFOS/pollos_petrel/test.csv"
+    testing_dataset_path = "pollos_petrel/test.csv"
     testing_dataset = pd.read_csv(testing_dataset_path)
     print(type(testing_dataset))
     return testing_dataset
