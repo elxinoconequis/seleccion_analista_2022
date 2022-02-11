@@ -5,7 +5,7 @@ import matplotlib
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
     submission_file_name = "JFOS_submission.csv"
-    training_dataset_path = "C:/Users/Fernando/Desktop/GECI-Seleccion_analista/seleccion_analista_2022_JFOS/pollos_petrel/train.csv"
+    training_dataset_path = "pollos_petrel/train.csv"
     training_dataset = pd.read_csv(training_dataset_path)
     print(type(training_dataset))
 
