@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import matplotlib
+import numpy as np
 
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
@@ -45,11 +46,17 @@ def add_mean_as_target() -> pd.DataFrame:
 
 
 # Guarda el archivo con sufijo _submission.csv
-def write_submission(dataset: pd.DataFrame,filename=""):
+def write_submission():
+    filename="JFOS_submission.csv"
     submission_path = "pollos_petrel/"+filename
     submission = add_mean_as_target()
     submission.to_csv(submission_path)
 
+def resumen_5_num(dataset: pd.DataFrame) -> pd.DataFrame:
+    # Sample minimum
+
+
+    return 
 
 ## ------MAIN-----------------------
 cwd=os.getcwd()
