@@ -62,7 +62,7 @@ print("Pandas version: ", pd.__version__)
 print("\nLeer /train.csv")
 df_train=read_training_dataset()
 
-df.train=df_train.fillna(0)
+df_train=df_train.fillna(0)
 print(df_train[["Masa","target"]])
 
 sort_by_mass = df_train.sort_values(by=["Masa"])
