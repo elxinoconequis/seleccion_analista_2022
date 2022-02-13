@@ -78,6 +78,9 @@ print(sort_by_mass)
 sort_by_day=df_train.sort_values(by=["target"])
 print(sort_by_day)
 
+# 5-Num summary
+print("5-Num Summary\n",sort_by_day.describe())
+
 # 2.- Evalúa el modelo ajustado en test.csv
 #print("\nLeer /test.csv")
 #df_test=read_testing_dataset()
