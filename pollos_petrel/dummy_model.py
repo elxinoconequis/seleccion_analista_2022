@@ -67,7 +67,7 @@ print(sort_by_mass)
 
 sort_by_day = df_train.sort_values(by=["target"])
 print(sort_by_day)
-fig, ax = plt.subplots()  # Create a figure and a set of subplots
+
 # (OPCIONAL) Anális exploratorio de datos
 # a. Disponibilidad de datos
 print("5-Num Summary\n", sort_by_day.describe())
@@ -76,8 +76,12 @@ print("5-Num Summary\n", sort_by_day.describe())
 
 # c. Visualización de resumenes
 # Diagramas de caja
-sort_by_day["target"].plot(kind="box",)
-plt.title("Días")
+fig, axs = plt.subplots(
+    1, 2, sharex=False, sharey=False, figsize=(7.5, 5)
+)  # Create a figure and a set of subplots
+fig.suptitle("Diagramas de Caja")
+sort_by_day.boxplot("target", ax=axs[0], vert=False)
+sort_by_day.boxplot("Masa", ax=axs[1], vert=False)
 plt.show()
 
 # Cartas de control
