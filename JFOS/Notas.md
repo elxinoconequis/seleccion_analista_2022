@@ -5,12 +5,15 @@ Autor: Joaquín Fernando Ortega Silva
 SO: Windows 10
 Entorno virtual: Anaconda 3 ('base':conda)
 Versión de python: 3.9.7 64-bit
-
+Usar formato Black
 Trabajando en "branch-1"
 
 Estoy trabajando en pollos_petrel/dummy_model.py
 
 Las unidades de longitud son *mm* y las de masa con *g*
+
+### Definiciones:
+- Tarso: 
 
 
 ## Análisis del problema
@@ -25,7 +28,7 @@ Queda pendiente reoslver cuales son la sunideades de longitud y masa.
 ## Anexos
 
 [Análisis Exploratorio de Datos](https://islas.dev/2018/06/28/analisis-exploratorio)
-[Creating a partial commit(GitHub Desktop)](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project#creating-a-partial-commit)
+
 ### Resumen de 5 numeros
 1. Sample minimum
 2. Lower quartile 
