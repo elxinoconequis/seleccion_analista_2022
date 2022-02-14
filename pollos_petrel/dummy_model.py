@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
+
+
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
     submission_file_name = "JFOS_submission.csv"
@@ -56,17 +58,13 @@ def resumen_5_num(dataset: pd.DataFrame) -> pd.DataFrame:
     return
 
 
-# ------MAIN-----------------------
 cwd = os.getcwd()
 print("\nCurrent Working Directory", cwd)
 print("List files and directories: \n", os.listdir())
 print("Pandas version: ", pd.__version__)
-
-
 # 1.- Ajusta un modelo con el archivo train.csv
 print("\nLeer /train.csv")
 df_train = read_training_dataset()
-
 df_train = df_train.fillna(0)
 print(df_train[["Masa", "target"]])
 
@@ -75,11 +73,25 @@ print(sort_by_mass)
 
 sort_by_day = df_train.sort_values(by=["target"])
 print(sort_by_day)
+fig, ax = plt.subplots()  # Create a figure and a set of subplots
+
+
+# (OPCIONAL) Anális exploratorio de datos
+# a. Disponibilidad de datos
+print("5-Num Summary\n", sort_by_day.describe())
+
+# b. Datos Crudos
+
+# c. Visualización de resumenes
+# Diagramas de caja
+sort_by_day["target"].plot(kind="box",)
 plt.title("Días")
 plt.show()
 
-# 5-Num summary
-print("5-Num Summary\n", sort_by_day.describe())
+# Cartas de control
+
+# Histogramas
+
 
 # 2.- Evalúa el modelo ajustado en test.csv
 # print("\nLeer /test.csv")
