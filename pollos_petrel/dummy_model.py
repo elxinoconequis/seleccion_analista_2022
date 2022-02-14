@@ -1,8 +1,6 @@
 import pandas as pd
 import os
-import matplotlib
-import numpy as np
-
+import matplotlib.pyplot as plt
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
     submission_file_name = "JFOS_submission.csv"
@@ -55,7 +53,6 @@ def write_submission():
 
 def resumen_5_num(dataset: pd.DataFrame) -> pd.DataFrame:
     # Sample minimum
-
     return
 
 
@@ -78,6 +75,9 @@ print(sort_by_mass)
 
 sort_by_day = df_train.sort_values(by=["target"])
 print(sort_by_day)
+sort_by_day["target"].plot(kind="bar",)
+plt.title("Días")
+plt.show()
 
 # 5-Num summary
 print("5-Num Summary\n", sort_by_day.describe())
@@ -88,7 +88,7 @@ print("5-Num Summary\n", sort_by_day.describe())
 
 
 # 3.- Guarda la respuesta en un archivo .csv
-submission_file_name = "JFOS_submission.csv"
+
 
 # Resultado: Estimar la edad de acuerdo a la morfometría
 # id,edad estimada
