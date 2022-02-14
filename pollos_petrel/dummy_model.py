@@ -75,7 +75,6 @@ print(sort_by_mass)
 
 sort_by_day = df_train.sort_values(by=["target"])
 print(sort_by_day)
-sort_by_day["target"].plot(kind="bar",)
 plt.title("Días")
 plt.show()
 

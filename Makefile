@@ -2,8 +2,6 @@ submissions: \
     pollos_petrel/example_python_submission.csv \
     pollos_petrel/example_r_submission.csv 
 				
-    
-
 pollos_petrel/example_python_submission.csv: setup_python src/example_submission.py
 	@echo "Creating Python submission..."
 	src/example_submission.py
