@@ -59,7 +59,7 @@ def resumen_5_num(dataset: pd.DataFrame) -> pd.DataFrame:
     return
 
 
-## ------MAIN-----------------------
+# ------MAIN-----------------------
 cwd = os.getcwd()
 print("\nCurrent Working Directory", cwd)
 print("List files and directories: \n", os.listdir())
