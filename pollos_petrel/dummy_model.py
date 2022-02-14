@@ -10,7 +10,6 @@ def read_training_dataset() -> pd.DataFrame:
     training_dataset = pd.read_csv(training_dataset_path)
     print("Length: ", len(training_dataset), type(training_dataset))
     print(training_dataset.head())
-
     return training_dataset
 
 
@@ -53,11 +52,6 @@ def write_submission():
     submission.to_csv(submission_path)
 
 
-def resumen_5_num(dataset: pd.DataFrame) -> pd.DataFrame:
-    # Sample minimum
-    return
-
-
 cwd = os.getcwd()
 print("\nCurrent Working Directory", cwd)
 print("List files and directories: \n", os.listdir())
@@ -74,8 +68,6 @@ print(sort_by_mass)
 sort_by_day = df_train.sort_values(by=["target"])
 print(sort_by_day)
 fig, ax = plt.subplots()  # Create a figure and a set of subplots
-
-
 # (OPCIONAL) Anális exploratorio de datos
 # a. Disponibilidad de datos
 print("5-Num Summary\n", sort_by_day.describe())
