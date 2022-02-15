@@ -82,11 +82,16 @@ fig.suptitle("Diagramas de Caja")
 sort_by_day.boxplot("target", ax=axs[0], vert=False)
 sort_by_day.boxplot("Masa", ax=axs[1], vert=False)
 plt.show()
+plt.close()
 
 # Cartas de control
 
 # Histogramas
-
+fig2, axs2 = plt.subplots(1, 2, sharey=True, tight_layout=True)
+fig2.suptitle("Diagramas de Caja")
+sort_by_day.hist("target",bins=len(sort_by_day["target"]))
+sort_by_day.hist("Masa",bins=len(sort_by_day["Masa"]))
+plt.show()
 
 # 2.- Evalúa el modelo ajustado en test.csv
 # print("\nLeer /test.csv")
