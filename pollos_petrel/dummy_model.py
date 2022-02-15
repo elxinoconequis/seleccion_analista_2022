@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-import matplotlib.pyplot as plt
 
 
 # Lee train.csv
@@ -54,7 +53,7 @@ def write_submission():
 cwd = os.getcwd()
 print("\nCurrent Working Directory", cwd)
 print("List files and directories: \n", os.listdir())
-print("Pandas version: ", pd.__version__)
+
 # 1.- Ajusta un modelo con el archivo train.csv
 print("\nLeer /train.csv")
 df_train = read_training_dataset()
@@ -69,33 +68,20 @@ print(sort_by_day)
 
 # (OPCIONAL) Anális exploratorio de datos
 # a. Disponibilidad de datos
-print("5-Num Summary\n", sort_by_day.describe())
+
 
 # b. Datos Crudos
 
 # c. Visualización de resumenes
 # Diagramas de caja
-fig, axs = plt.subplots(
-    1, 2, sharex=False, sharey=False, figsize=(7.5, 5)
-)  # Create a figure and a set of subplots
-fig.suptitle("Diagramas de Caja")
-sort_by_day.boxplot("target", ax=axs[0], vert=False)
-sort_by_day.boxplot("Masa", ax=axs[1], vert=False)
-plt.show()
-plt.close()
+
 
 # Cartas de control
 
 # Histogramas
-fig2, axs2 = plt.subplots(1, 2, sharey=True, tight_layout=True)
-fig2.suptitle("Diagramas de Caja")
-sort_by_day.hist("target",bins=len(sort_by_day["target"]))
-sort_by_day.hist("Masa",bins=len(sort_by_day["Masa"]))
-plt.show()
+
 
 # 2.- Evalúa el modelo ajustado en test.csv
-# print("\nLeer /test.csv")
-# df_test=read_testing_dataset()
 
 
 # 3.- Guarda la respuesta en un archivo .csv
