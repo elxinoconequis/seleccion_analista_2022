@@ -1,10 +1,13 @@
 import pandas as pd
+import os
 
 
 # Lee train.csv
 def read_training_dataset() -> pd.DataFrame:
     training_dataset_path = "pollos_petrel/train.csv"
     training_dataset = pd.read_csv(training_dataset_path)
+    print("Length: ", len(training_dataset), type(training_dataset))
+    print(training_dataset.head())
     return training_dataset
 
 
@@ -18,6 +21,8 @@ def get_target_mean(dataset: pd.DataFrame) -> float:
 def read_testing_dataset() -> pd.DataFrame:
     testing_dataset_path = "pollos_petrel/test.csv"
     testing_dataset = pd.read_csv(testing_dataset_path)
+    print("Length: ", len(testing_dataset), type(testing_dataset))
+    print(testing_dataset.head())
     return testing_dataset
 
 
@@ -42,3 +47,44 @@ def write_submission():
     submission_path = "pollos_petrel/example_python_submission.csv"
     submission = add_mean_as_target()
     submission.to_csv(submission_path)
+
+
+cwd = os.getcwd()
+print("\nCurrent Working Directory", cwd)
+print("List files and directories: \n", os.listdir())
+
+# 1.- Ajusta un modelo con el archivo train.csv
+print("\nLeer /train.csv")
+df_train = read_training_dataset()
+df_train = df_train.fillna(0)
+print(df_train[["Masa", "target"]])
+
+sort_by_mass = df_train.sort_values(by=["Masa"])
+print(sort_by_mass)
+
+sort_by_day = df_train.sort_values(by=["target"])
+print(sort_by_day)
+
+# (OPCIONAL) Anális exploratorio de datos
+# a. Disponibilidad de datos
+
+
+# b. Datos Crudos
+
+# c. Visualización de resumenes
+# Diagramas de caja
+
+
+# Cartas de control
+
+# Histogramas
+
+
+# 2.- Evalúa el modelo ajustado en test.csv
+
+
+# 3.- Guarda la respuesta en un archivo .csv
+
+
+# Resultado: Estimar la edad de acuerdo a la morfometría
+# id,edad estimada
