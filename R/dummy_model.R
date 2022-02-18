@@ -1,8 +1,10 @@
 library(tidyverse)
 
+
 read_training_dataset <- function() {
   training_dataset_path <- "pollos_petrel/train.csv"
-  training_dataset <- read_csv(training_dataset_path)
+  training_dataset <- read_csv(training_dataset_path) # nolint
+  # verificar la diferencia entre read_csc y read.csv
   return(training_dataset)
 }
 
@@ -15,7 +17,7 @@ get_target_mean <- function(dataset) {
 
 read_testing_dataset <- function() {
   testing_dataset_path <- "pollos_petrel/test.csv"
-  testing_dataset <- read_csv(testing_dataset_path)
+  testing_dataset <- read.csv(testing_dataset_path)
   return(testing_dataset)
 }
 
@@ -40,5 +42,5 @@ add_mean_as_target <- function() {
 write_submission <- function() {
   submission_path <- "pollos_petrel/example_r_submission.csv"
   submission <- add_mean_as_target()
-  write_csv(submission, submission_path)
+  write.csv(submission, submission_path)
 }
