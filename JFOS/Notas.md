@@ -41,7 +41,7 @@ En el archivo *tain.csv* tenemos las siguientes categorias, donde target seprese
 >-id,Masa,Longitud_tarso,Longitud_ala,Longitud_pico Longitud_pluma_interior_de_la_cola,Longitud_pluma_exterior_de_la_cola,target
 ## Conflictos
 - ~~Cada que corro *dummy_model.py* me cambia el directorio de trabajo.~~
-- Hay que tener cuidado de no modificar la función write_submissions puesto que se usa en /src y en github actions para validar el codigo
+- Hay que tener cuidado de no modificar la función write_submissions puesto que se usa en /src y en github actions para validar el código
 - ¿Como usar los comandos make?/¿Como correr un Makefile?
     - **How to run a makefile in Windows?** Ver [esto](https://stackoverflow.com/questions/2532234/how-to-run-a-makefile-in-windows#:~:text=First%20step%3A%20download%20mingw32%2Dmake,directory%20where%20makefile%20is%20located.)
 
