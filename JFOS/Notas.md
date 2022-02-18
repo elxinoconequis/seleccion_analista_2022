@@ -110,4 +110,28 @@ ____
 
 >A frequency distribution shows how often each different value in a set of data occurs. A histogram is the most commonly used graph to show frequency distributions. It looks very much like a bar chart, but there are important differences between them
 
+### REcordatorio de comandos Git
+
+`git remote -v` muestra información de los repositorio trackeados
+
+
+#### git orifgin vs upstream
+[link](https://medium.com/techoverflow/git-origin-vs-upstream-vs-branches-e8609af4120)
+
+    To make a copy of this original repository into a user’s account, git provides you an option called forking. Once forked, the original repository is referred to as upstream and the forked repository is referred to as the origin.
+
+
+Ahorita quiero hacer un push de mi local a mi origing, es decir, a 
+> https://github.com/elxinoconequis/seleccion_analista_2022_JFOS.git 
+
+**git fetch**
+
+https://www.atlassian.com/es/git/tutorials/syncing/git-fetch
+
+
+    El comando git fetch descarga commits, archivos y referencias de un repositorio remoto a tu repositorio local. Esta acción la llevas a cabo cuando quieres ver en qué han estado trabajando los demás.
+
+Para descargar contenido de un repositorio remoto, los comandos git pull y git fetch están disponibles para realizar esta tarea. Puedes considerar git fetch como la versión segura de los dos comandos. Este comando descarga el contenido remoto, pero no actualiza el estado de trabajo del repositorio local, por lo que tu trabajo actual no se verá afectado. git pull constituye una alternativa más agresiva, ya que descarga el contenido remoto a la rama local activa e inmediatamente ejecuta git merge para crear un commit fusionado con el nuevo contenido remoto. Si tienes cambios pendientes en curso, esta acción provocará conflictos e iniciará el flujo de resolución de conflictos de fusión.
+
+** Tracking branches**
 
