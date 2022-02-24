@@ -1,6 +1,5 @@
 def return_one() -> int:
-    return 1
+    
+    return int(1)
 
 
-x = return_one()
-print(x, type(x))
