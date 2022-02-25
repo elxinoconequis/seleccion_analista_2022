@@ -45,21 +45,21 @@ def write_submission():
     submission.to_csv(submission_path)
 
 
+def print_workspace():
+    print("Current Working Directory: ", os.getcwd())
+    print("List files and directories: \n", os.listdir())
 
-print("\nCurrent Working Directory", os.getcwd())
-print("List files and directories: \n", os.listdir())
+
+# Main
+print_workspace()
 
 # 1.- Ajusta un modelo con el archivo train.csv
-print("\nLeer /train.csv")
 df_train = read_training_dataset()
 df_train = df_train.fillna(0)
-print(df_train[["Masa", "target"]])
 
+# sortear
 sort_by_mass = df_train.sort_values(by=["Masa"])
-print(sort_by_mass)
-
 sort_by_day = df_train.sort_values(by=["target"])
-print(sort_by_day)
 
 # (OPCIONAL) Anális exploratorio de datos
 # a. Disponibilidad de datos

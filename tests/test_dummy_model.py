@@ -5,6 +5,7 @@ from pollos_petrel import (
     read_testing_dataset,
     read_training_dataset,
     write_submission,
+    print_workspace,
 )
 import os
 import pandas as pd
@@ -61,3 +62,14 @@ def test_write_submission():
     write_submission()
     assert os.path.exists(submission_path)
     os.remove(submission_path)
+
+
+def test_print_workspace(capsys):
+    print_workspace()
+    captured = capsys.readouterr()
+    work_dir = os.getcwd()
+    content_dir = os.listdir()
+    assert "Current Working Directory: " in captured.out
+    assert work_dir in captured.out
+    for x in content_dir:
+        assert x in captured.out
