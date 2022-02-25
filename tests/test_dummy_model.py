@@ -70,6 +70,3 @@ def test_print_workspace(capsys):
     work_dir = os.getcwd()
     content_dir = os.listdir()
     assert "Current Working Directory:  /workdir" in captured.out
-    assert work_dir in captured.out
-    for x in content_dir:
-        assert x in captured.out
