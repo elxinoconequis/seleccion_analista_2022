@@ -45,21 +45,38 @@ def write_submission():
     submission.to_csv(submission_path)
 
 
+# Imprime el actual espacio de trabajo y lista de archivos
 def print_workspace():
     print("Current Working Directory: ", os.getcwd())
-    print("List files and directories: \n", os.listdir())
+    print("XXList files and directories: XX", os.listdir())
 
 
-# Main
-print_workspace()
+# Limpia NA's de un DataFrame con un cero
+def clean_NA(df_raw: pd.DataFrame) -> pd.DataFrame:
+    check_nan_in_df = df_raw.isnull().values.any()
+    if check_nan_in_df == True:
+        df_clean = df_raw.fillna(0)
 
-# 1.- Ajusta un modelo con el archivo train.csv
-df_train = read_training_dataset()
-df_train = df_train.fillna(0)
+    elif check_nan_in_df == None:
+        return df_raw
 
-# sortear
-sort_by_mass = df_train.sort_values(by=["Masa"])
-sort_by_day = df_train.sort_values(by=["target"])
+    else:
+        df_clean = df_raw
+
+    return df_clean
+
+
+# Ordenar por masa
+def sort_by_mass(dataset: pd.DataFrame) -> pd.DataFrame:
+    df_by_mass = dataset.sort_values(by=["Masa"])
+    return df_by_mass
+
+
+# Ordenar por día
+def sort_by_day(dataset: pd.DataFrame) -> pd.DataFrame:
+    df_by_day = dataset.sort_values(by=["target"])
+    return df_by_day
+
 
 # (OPCIONAL) Anális exploratorio de datos
 # a. Disponibilidad de datos

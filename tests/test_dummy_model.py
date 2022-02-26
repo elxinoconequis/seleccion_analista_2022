@@ -6,6 +6,9 @@ from pollos_petrel import (
     read_training_dataset,
     write_submission,
     print_workspace,
+    clean_NA,
+    sort_by_mass,
+    sort_by_day,
 )
 import os
 import pandas as pd
@@ -62,11 +65,31 @@ def test_write_submission():
     write_submission()
     assert os.path.exists(submission_path)
     os.remove(submission_path)
+    assert submission_path is not None
 
 
+# Imprime el actual espacio de trabajo y lista de archivos
 def test_print_workspace(capsys):
     print_workspace()
     captured = capsys.readouterr()
     work_dir = os.getcwd()
     content_dir = os.listdir()
     assert "Current Working Directory:  /workdir" in captured.out
+
+
+# Limpia NA's de un DataFrame del archivo train.csv
+def test_clean_NA_empty():
+    obtained = clean_NA(read_training_dataset())
+    assert obtained is not None
+
+
+# def test_sort_by_mass():
+#     assert
+
+# Test para ordenar por día del archivo train.csv s
+def test_sort_by_day():
+    expected_index_of_max = 824
+    max_day = 83
+    dataset = sort_by_day(clean_NA(read_training_dataset()))
+    assert dataset["target"].index[-1] == expected_index_of_max
+    assert dataset["target"].max() == max_day
