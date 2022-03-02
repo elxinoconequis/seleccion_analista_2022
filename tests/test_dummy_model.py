@@ -74,7 +74,9 @@ def test_print_workspace(capsys):
     captured = capsys.readouterr()
     work_dir = os.getcwd()
     content_dir = os.listdir()
-    assert "Current Working Directory:  /workdir" in captured.out
+    expected_string = "Current Working Directory:  /workdir" 
+    obtained_string = captured.out
+    assert expected_string in obtained_string
 
 
 # Limpia NA's de un DataFrame del archivo train.csv
