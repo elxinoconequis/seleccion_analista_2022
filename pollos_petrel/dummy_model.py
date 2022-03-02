@@ -64,7 +64,6 @@ def clean_NA(df_raw: pd.DataFrame) -> pd.DataFrame:
 
 # Ordenar por masa
 def sort_by_mass(dataset: pd.DataFrame) -> pd.DataFrame:
-    # df_by_mass = dataset.sort_values(by=["Masa"])
     return dataset.sort_values(by=["Masa"])
 
 
