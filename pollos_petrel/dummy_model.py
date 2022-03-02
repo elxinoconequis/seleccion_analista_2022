@@ -69,5 +69,4 @@ def sort_by_mass(dataset: pd.DataFrame) -> pd.DataFrame:
 
 # Ordenar por día
 def sort_by_day(dataset: pd.DataFrame) -> pd.DataFrame:
-    # df_by_day = dataset.sort_values(by=["target"])
     return dataset.sort_values(by=["target"])
