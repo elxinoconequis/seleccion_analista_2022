@@ -1,3 +1,4 @@
+from sklearn import datasets
 from pollos_petrel import (
     add_mean_as_target,
     clean_NA,
@@ -7,6 +8,7 @@ from pollos_petrel import (
     read_testing_dataset,
     read_training_dataset,
     sort_by_day,
+    sort_by_mass,
     write_submission,
 )
 import os
@@ -82,8 +84,16 @@ def test_clean_NA_empty():
     assert obtained is not None
 
 
-# def test_sort_by_mass():
-#     assert
+# Test para ordenar por masa del archivo train.csv
+def test_sort_by_mass():
+    expected_index_of_max = 185
+    expected_max_mass = 104.8
+    dataset = sort_by_mass(clean_NA(read_testing_dataset()))
+    obtained_index = dataset["Masa"].index[-1]
+    obtained_max_mass = dataset["Masa"].max()
+    assert obtained_index == expected_index_of_max
+    assert obtained_max_mass == expected_max_mass
+
 
 # Test para ordenar por día del archivo train.csv s
 def test_sort_by_day():

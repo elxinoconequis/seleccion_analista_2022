@@ -48,31 +48,27 @@ def write_submission():
 # Imprime el actual espacio de trabajo y lista de archivos
 def print_workspace():
     print("Current Working Directory: ", os.getcwd())
-    print("List files and directories: ", os.listdir())
 
 
 # Limpia NA's de un DataFrame con un cero
 def clean_NA(df_raw: pd.DataFrame) -> pd.DataFrame:
-    check_nan_in_df = df_raw.isnull().values.any()
-    if check_nan_in_df is True:
-        df_clean = df_raw.fillna(0)
-
-    elif check_nan_in_df is None:
-        return df_raw
+    # Is either True or False
+    if df_raw.isnull().values.any():
+        df_clean = df_raw.fillna(0) # Default None, but i would like 0
 
     else:
-        df_clean = df_raw
+        return df_raw
 
     return df_clean
 
 
 # Ordenar por masa
 def sort_by_mass(dataset: pd.DataFrame) -> pd.DataFrame:
-    df_by_mass = dataset.sort_values(by=["Masa"])
-    return df_by_mass
+    # df_by_mass = dataset.sort_values(by=["Masa"])
+    return dataset.sort_values(by=["Masa"])
 
 
 # Ordenar por día
 def sort_by_day(dataset: pd.DataFrame) -> pd.DataFrame:
-    df_by_day = dataset.sort_values(by=["target"])
-    return df_by_day
+    # df_by_day = dataset.sort_values(by=["target"])
+    return dataset.sort_values(by=["target"])
