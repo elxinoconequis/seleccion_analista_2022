@@ -1,13 +1,12 @@
 from pollos_petrel import (
     add_mean_as_target,
+    clean_NA,
     drop_all_but_id,
     get_target_mean,
-    clean_NA,
     print_workspace,
     read_testing_dataset,
     read_training_dataset,
     sort_by_day,
-    sort_by_mass,
     write_submission,
 )
 import os
@@ -72,9 +71,7 @@ def test_write_submission():
 def test_print_workspace(capsys):
     print_workspace()
     captured = capsys.readouterr()
-    work_dir = os.getcwd()
-    content_dir = os.listdir()
-    expected_string = "Current Working Directory:  /workdir" 
+    expected_string = "Current Working Directory:  /workdir"
     obtained_string = captured.out
     assert expected_string in obtained_string
 
@@ -93,5 +90,7 @@ def test_sort_by_day():
     expected_index_of_max = 824
     max_day = 83
     dataset = sort_by_day(clean_NA(read_training_dataset()))
-    assert dataset["target"].index[-1] == expected_index_of_max
-    assert dataset["target"].max() == max_day
+    obtained_index = dataset["target"].index[-1]
+    obtained_day = dataset["target"].max()
+    assert obtained_index == expected_index_of_max
+    assert obtained_day == max_day

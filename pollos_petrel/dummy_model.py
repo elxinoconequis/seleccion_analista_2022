@@ -54,10 +54,10 @@ def print_workspace():
 # Limpia NA's de un DataFrame con un cero
 def clean_NA(df_raw: pd.DataFrame) -> pd.DataFrame:
     check_nan_in_df = df_raw.isnull().values.any()
-    if check_nan_in_df == True:
+    if check_nan_in_df is True:
         df_clean = df_raw.fillna(0)
 
-    elif check_nan_in_df == None:
+    elif check_nan_in_df is None:
         return df_raw
 
     else:
