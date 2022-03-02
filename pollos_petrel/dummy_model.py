@@ -48,7 +48,7 @@ def write_submission():
 # Imprime el actual espacio de trabajo y lista de archivos
 def print_workspace():
     print("Current Working Directory: ", os.getcwd())
-    print("XXList files and directories: XX", os.listdir())
+    print("List files and directories: ", os.listdir())
 
 
 # Limpia NA's de un DataFrame con un cero
