@@ -98,9 +98,9 @@ def test_sort_by_mass():
 # Test para ordenar por día del archivo train.csv s
 def test_sort_by_day():
     expected_index_of_max = 824
-    max_day = 83
     dataset = sort_by_day(clean_NA(read_training_dataset()))
-    obtained_index = dataset["target"].index[-1]
-    obtained_day = dataset["target"].max()
-    assert obtained_index == expected_index_of_max
-    assert obtained_day == max_day
+    obtained_index_of_max = dataset["target"].index[-1]
+    assert expected_index_of_max == obtained_index_of_max
+    expected_max_day = 83
+    obtained_max_day = dataset["target"].max()
+    assert expected_max_day == obtained_max_day
