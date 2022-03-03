@@ -53,7 +53,7 @@ def print_workspace():
 # Limpia NA's de un DataFrame con un cero
 def clean_NA(df_raw: pd.DataFrame, fill: int) -> pd.DataFrame:
     # Is either True or False
-    check_NaN = df_raw.isnull().values.any()
+    is_any_nan = df_raw.isnull().values.any()
     if check_NaN:
         df_clean = df_raw.fillna(fill)  # Default None, but i would like 0
 
