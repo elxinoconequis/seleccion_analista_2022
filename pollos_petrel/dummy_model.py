@@ -54,7 +54,7 @@ def print_workspace():
 def clean_NA(df_raw: pd.DataFrame, fill: int) -> pd.DataFrame:
     # Is either True or False
     is_any_nan = df_raw.isnull().values.any()
-    df_clean = df_raw.fillna(fill) if check_NaN else df_raw
+    df_clean = df_raw.fillna(fill) if is_any_nan else df_raw
     return df_clean
 
 
