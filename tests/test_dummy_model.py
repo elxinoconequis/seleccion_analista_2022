@@ -110,7 +110,8 @@ def test_sort_by_day():
 def test_Clean_NA_fill_NA():
     dataset = read_training_dataset()
     obtained_val_index_0_6 = dataset.iloc[0][6]
-    assert np.isnan(obtained_val_index_0_6)
+    is_nan_val_index_0_6 = np.isnan(obtained_val_index_0_6)
+    assert is_nan_val_index_0_6
     clean_dataset = clean_NA(read_testing_dataset(), 0)
     obtained_val_index_0_6 = clean_dataset.iloc[0][6]
     expected_val_index_0_6 = 0
