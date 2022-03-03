@@ -1,7 +1,4 @@
-from distutils.command.clean import clean
 import numpy as np
-from cmath import nan
-from sklearn import datasets
 from pollos_petrel import (
     add_mean_as_target,
     clean_NA,
