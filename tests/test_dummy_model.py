@@ -86,13 +86,13 @@ def test_clean_NA_empty():
 
 # Test para ordenar por masa del archivo train.csv
 def test_sort_by_mass():
-    expected_index_of_max = 185
-    expected_max_mass = 104.8
+    expected_index_of_max_mass = 185
     dataset = sort_by_mass(clean_NA(read_testing_dataset()))
-    obtained_index = dataset["Masa"].index[-1]
+    obtained_index_of_max_mass = dataset["Masa"].index[-1]
+    assert expected_index_of_max == obtained_index
+    expected_max_mass = 104.8
     obtained_max_mass = dataset["Masa"].max()
-    assert obtained_index == expected_index_of_max
-    assert obtained_max_mass == expected_max_mass
+    assert expected_max_mass == obtained_max_mass
 
 
 # Test para ordenar por día del archivo train.csv s
