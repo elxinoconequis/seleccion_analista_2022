@@ -1,15 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-from pollos_petrel.make_diagram import (
+from pollos_petrel import (
     make_box_diagram,
-)
-
-from pollos_petrel.dummy_model import (
     clean_NA,
-    read_testing_dataset,
-    read_training_dataset,
-)
+    read_training_dataset)
 
 # Test to check the savefig()
 def test_make_box_diagram_path():
