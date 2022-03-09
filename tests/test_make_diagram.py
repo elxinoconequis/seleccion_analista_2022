@@ -5,7 +5,7 @@ from pollos_petrel.make_diagram import (
     make_box_diagram,
 )
 
-from pollos_petrel.dummy_model import (
+from pollos_petrel import (
     clean_NA,
     read_testing_dataset,
     read_training_dataset,
