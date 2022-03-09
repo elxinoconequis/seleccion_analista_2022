@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 
 
-
 def make_box_diagram(clean_df: pd.DataFrame):
     fig, axs = plt.subplots(1, 2)
     plot_first_subplot(clean_df, axs, 0)
@@ -45,4 +44,3 @@ def make_grid_second_subplot(axs: np.array, index: int):
 # Guardar figura
 def save_figure():
     plt.savefig("images/Box_diagram_train.png")
-
