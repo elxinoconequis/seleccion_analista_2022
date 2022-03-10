@@ -5,6 +5,7 @@ from pollos_petrel import make_box_diagram, clean_NA, read_training_dataset
 
 # Test to check the savefig()
 def test_make_box_diagram_path():
+    pathlib.Path("images").mkdir(exist_ok=True)
     submission_path = "images/Box_diagram_train.png"
     if os.path.exists(submission_path):
         os.remove(submission_path)
