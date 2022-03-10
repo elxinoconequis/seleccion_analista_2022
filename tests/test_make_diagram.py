@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import pathlib
 from pollos_petrel import make_box_diagram, clean_NA, read_training_dataset
 
 
